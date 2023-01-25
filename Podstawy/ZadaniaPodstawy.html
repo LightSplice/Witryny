@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Tytuł strony</title>
+    </head>
+    <body>
+        <script>
+
+             /*
+                Zadanie 1
+                Napisz funkcję, która przyjmie liczbę i wyświetli
+                informację czy jest ona parzysta czy nieparzysta.
+
+                Zadanie 2
+                Napisz funkcję, która przyjmie dwie wartości
+                i wyświetli:
+                * informację czy wartości są równe czy nie
+                * informację czy wartości są identyczne czy nie
+                 
+                Zadanie 3
+                Napisz funkcję, która przymie liczbę 
+                i wyswietli nazwę dnia tygodnia.
+
+                Zadanie 4*
+                Napisz funkcję, która pobierze liczbę
+                i wyświetli ją w systemie binarnym.
+            */
+
+
+            for(var i = 0; i <= 10; i++)
+                document.write(i + "<br/>");
+
+            for(var mnozna = 1; mnozna<= 10; mnozna++)
+                for (var mnoznik = 1; mnoznik <= 10; mnoznik++)
+                    document.write(mnozna + " * " + mnoznik + "=" + (mnozna*mnoznik)+"<br/>");
+            
+            mnoznik = 0;
+            mnozna = 0;
+            while (mnozna <= 10)
+            {
+                document.write(mnozna + " * " + mnoznik + "=" + (mnozna*mnoznik)+"<br/>");
+                mnoznik++;
+                if (mnoznik > 10)
+                {
+                    mnoznik = 0;
+                    mnozna++;
+                }
+            }
+
+        function NumberEvenOrOdd()
+        {
+            var Number = 2;
+
+            document.write("Write a number or word: ");
+            document.write(Number);
+
+            if (Number %2 != 0);
+            {
+            document.write("The number " + Number + " is odd");
+            }
+
+            if (Number %2 == 0)
+            {
+                document.write("Number " + Number + " is even");
+            }
+        }
+
+        function TwoValueFunction()
+        {
+            var Number1;
+            var Number2;
+
+            document.write("Write two numbers: ");
+            document.write(Number1 + " ," + Number2);
+
+            if (Number1 == Number2);
+            {
+                document.write("Numbers are equal");
+            }
+        }
+
+        function DayOfTheWeek()
+        {
+            var day1 = "Sunday";
+            var day2 = "Monday";
+            var day3 = "Tuesday";
+            var day4 = "Wednesday";
+            var day5 = "Thursday";
+            var day6 = "Friday";
+            var day7 = "Saturday";
+
+            switch(1,2,3,4,5,6,7)
+            {
+                case 1:
+                document.write("Sunday")
+                break;
+                case 2:
+                document.write("")
+                break;
+                case 3:
+                document.write("Sunday")
+                break;
+                case 4:
+                document.write("Sunday")
+                break;
+                case 5:
+                document.write("Sunday")
+                break;
+                case 6:
+                document.write("Sunday")
+                break;
+                case 7:
+                document.write("Sunday")
+                break;
+            }
+        }
+        </script>
+    </body>
+</html>

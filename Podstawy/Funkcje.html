@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Tytuł strony</title>
+    </head>
+    <body>
+        <script>
+            /*
+                Wygląd C++:
+                typZwracany nazwaFunkcji(typ nazwa, typ nazwa)
+                {
+                    return wartoscZgodnaZTypemZwracanym;
+                }
+                void Pierwsza()
+                {
+                    std::cout<<"Hello\n";
+                }
+            */
+
+            function ShowInfo()
+            {
+                document.write("Hello world!!!");
+                document.write("<br/>");
+            }
+
+            ShowInfo();
+            ShowInfo();
+
+            function ShowInfo2(komunikat, komunikat2)
+            {
+                document.write(komunikat);
+                document.write("<br/>");
+                document.write(komunikat2);
+                document.write("<br/>");
+            }
+
+            ShowInfo2("Hello world!!!!!!!!!!!!", "Drugi komunikat");
+            ShowInfo2("Ala ma kota");
+            ShowInfo2();
+
+            function Suma(liczbaPierwsza, liczbaDruga)
+            {
+                var wynik;
+                wynik = liczbaPierwsza + liczbaDruga;
+                return wynik;
+            }
+
+            var wynikFunkcji = Suma(15, 2157);
+            document.write(wynikFunkcji);
+            document.write("<br/>");
+
+        </script>
+    </body>
+</html>
