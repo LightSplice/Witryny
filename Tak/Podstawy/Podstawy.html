@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Tytuł strony</title>
+    </head>
+    <body>
+        <script>
+            let tablicaLiczb = [];
+            tablicaLiczb[0] = 5;
+            tablicaLiczb[1] = 7;
+            tablicaLiczb[2] = 1;
+            tablicaLiczb[3] = -11576;
+            tablicaLiczb[4] = 45;
+
+            for (let i = 0; i < tablicaLiczb.length; i++)
+                document.write(tablicaLiczb[i] + "<br/>");
+           
+            function SzukajMax(paramTab)
+            {
+                let aktMax = paramTab[0];
+                for (let i = 0; i < paramTab.length; i++)
+                    if (aktMax < paramTab[i])
+                        aktMax = paramTab[i];
+                document.write("Największa wartość " + aktMax + "<br/>");
+            }
+            SzukajMax(tablicaLiczb);
+            SzukajMax(5); //tutaj jest problem. Liczba nie jest tablicą
+            SzukajMax("qwertyuiop");
+
+            function WyswietlParametry(p1, p2)
+            {
+                document.write(p1 + "<br/>");
+                document.write(p2 + "<br/>");
+
+                document.write("Wyswietlenie wszystkich parametrów:<br/>");
+                for(let i = 0; i < arguments.length; i++)
+                    document.write(arguments[i] + "<br/>");
+            }
+            //WyswietlParametry(15, "Ala");
+            //WyswietlParametry(698);
+            WyswietlParametry("Ola", 87, 36);
+            //WyswietlParametry();
+        </script>
+    </body>
+</html>

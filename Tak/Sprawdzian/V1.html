@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Sprawdzian1</title>
+    </head>
+
+    <body>
+        <script>
+            var date = new Date();
+            function Time()
+            {
+                if (date.getHours() < 10)
+                {
+                    document.write("0" + date.getHours() + ":")
+                }
+                else
+                {
+                    document.write(date.getHours() + ":")
+                }
+                if (date.getMinutes() < 10)
+                {
+                    document.write("0" + date.getMinutes() + ":")
+                }
+                else
+                {
+                    document.write(date.getMinutes() + ":")
+                }
+                if (date.getSeconds() < 10)
+                {
+                    document.write("0" + date.getSeconds())
+                }
+                else
+                {
+                    document.write(date.getSeconds());
+                }
+            }
+            Time();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Przykładowy program</title>
+    </head>
+    <body>
+        <p>Podaj imię:</p>
+        <input type="text" id="nameId"/>
+        <p>Podaj wiek</p>
+        <input type="text" id="ageId" />
+        <br/>
+        <input type="button" value="Wyświetl informację" onclick="getInfo()"/>
+        <br/>
+
+        <div id="spaceForName">
+
+        </div>
+
+        <div id="spaceForAge">
+
+        </div>
+
+        <script>
+            function getInfo()
+            {
+                let name = document.getElementById("nameId").value;
+                let age = document.getElementById("ageId").value;
+                let spaceForName = document.getElementById("spaceForName");
+                let spaceForAge = document.getElementById("spaceForAge");
+                //parseInt(age) => konkretna liczba albo wartość NaN
+                if (name == "")
+                {
+                    spaceForName.innerText = "Podaj imie";
+                    return;
+                }
+
+                if (age == "")
+                {
+                    spaceForAge.innerText = "Podaj wiek";
+                    return;
+                }
+
+                if (isNaN(parseInt(age)))
+                {
+                    spaceForAge.innerText = "Podaj liczbę w wieku!";
+                    return;
+                }
+
+                if(age >= 18)
+                {
+                    age = "Jesteś pełnoletni";
+                }
+                
+                else if (age < 18)
+                {
+                    age = "Jesteś niepełnoletni";
+                }
+                
+                spaceForName.innerText = "Witaj " + name;
+                spaceForAge.innerText = age;
+            }
+            
+        </script>
+    </body>
+</html>

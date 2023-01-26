@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Tytuł strony</title>
+    </head>
+    <body>
+        <script>
+
+             /*
+                Zadanie 1
+                Napisz funkcję, która przyjmie liczbę i wyświetli
+                informację czy jest ona parzysta czy nieparzysta.
+
+                Zadanie 2
+                Napisz funkcję, która przyjmie dwie wartości
+                i wyświetli:
+                * informację czy wartości są równe czy nie
+                * informację czy wartości są identyczne czy nie
+                 
+                Zadanie 3
+                Napisz funkcję, która przymie liczbę 
+                i wyswietli nazwę dnia tygodnia.
+
+                Zadanie 4*
+                Napisz funkcję, która pobierze liczbę
+                i wyświetli ją w systemie binarnym.
+            */
+
+
+            for(var i = 0; i <= 10; i++)
+                document.write(i + "<br/>");
+
+            for(var mnozna = 1; mnozna<= 10; mnozna++)
+                for (var mnoznik = 1; mnoznik <= 10; mnoznik++)
+                    document.write(mnozna + " * " + mnoznik + "=" + (mnozna*mnoznik)+"<br/>");
+            
+            mnoznik = 0;
+            mnozna = 0;
+            while (mnozna <= 10)
+            {
+                document.write(mnozna + " * " + mnoznik + "=" + (mnozna*mnoznik)+"<br/>");
+                mnoznik++;
+                if (mnoznik > 10)
+                {
+                    mnoznik = 0;
+                    mnozna++;
+                }
+            }
+
+        function NumberEvenOrOdd()
+        {
+            var Number = 2;
+
+            document.write("Write a number or word: ");
+            document.write(Number);
+
+            if (Number %2 != 0);
+            {
+                document.write("The number " + Number + " is odd");
+            }
+
+            if (Number %2 == 0)
+            {
+                document.write("Number " + Number + " is even");
+            }
+        }
+
+        function TwoValueFunction()
+        {
+            var Number1;
+            var Number2;
+
+            document.write("Write two numbers: ");
+            document.write(Number1 + " ," + Number2);
+
+            if (Number1 == Number2);
+            {
+                document.write("Numbers are equal");
+            }
+        }
+
+        function DayOfTheWeek()
+        {
+            
+            switch(1,2,3,4,5,6,7)
+            {
+                case 1:
+                document.write("Sunday")
+                break;
+                case 2:
+                document.write("Monday")
+                break;
+                case 3:
+                document.write("Tuesday")
+                break;
+                case 4:
+                document.write("Wednesday")
+                break;
+                case 5:
+                document.write("Thursday")
+                break;
+                case 6:
+                document.write("Friday")
+                break;
+                case 7:
+                document.write("Saturday")
+                break;
+            }
+        }
+
+        function DecToBin(decNumber)
+            {
+                var strBin = "";
+                while (decNumber > 0)
+                {
+                    var rest = decNumber % 2;
+                    decNumber = parseInt(decNumber / 2); 
+                    strBin = rest + strBin;
+                }
+                document.write(strBin);
+                document.write("<br/>");
+            }
+            function DecToBin2(decNumber)
+            {
+                var strBin = "";
+                while (decNumber > 0)
+                {
+                    var rest = decNumber & 1;
+                    decNumber = decNumber >> 1; 
+                    strBin = rest + strBin;
+                }
+                document.write(strBin);
+                document.write("<br/>");
+            }
+            DecToBin(86)
+            DecToBin2(86)
+            
+
+            function CheckIfPrimeNumber(numberToCheck)
+            {
+
+            }
+            CheckIfPrimeNumber(5);
+            CheckIfPrimeNumber(8);
+
+
+
+            for(var i = 0; i <= 10; i++)
+                document.write(i + "<br/>");
+
+            for(var mnozna = 1; mnozna<= 10; mnozna++)
+                for (var mnoznik = 1; mnoznik <= 10; mnoznik++)
+                    document.write(mnozna + " * " + mnoznik + "=" + (mnozna*mnoznik)+"<br/>");
+            
+            mnoznik = 0;
+            mnozna = 0;
+            while (mnozna <=10)
+            {
+                document.write(mnozna + " * " + mnoznik + "=" + (mnozna*mnoznik)+"<br/>");
+                mnoznik++;
+                if (mnoznik > 10)
+                {
+                    mnoznik = 0;
+                    mnozna++;
+                }
+            }
+
+            //obiekt typu String
+            let tekst = "Ala ma kota";
+            let tekst2 = new String("Ala ma kota");
+
+            document.write("Zmienna tekst ma długość " + tekst.length + "<br/>");
+            document.write(tekst.substring(7,11));
+            document.write(tekst.toUpperCase + "<br/>");
+            document.write(tekst.toLowerCase + "<br/>");
+
+            //obiekt typu Array
+            let tab1 = [];
+            let tab2 = new Array();
+
+            tab1[0] = 5;
+            tab1[1] = 1;
+            tab1[2] = 4;
+
+            for (let i = 0; i < tab1.length; i++)
+                document.write(tab1[i] + ",");
+            document.write("<br/>");
+
+            document.write(tab1.join() + "<br/>");
+
+            //obiekt typu Date
+            let data = new Date();
+
+            document.write(data.toString() + "<br/>");
+            document.write("Rok: " + data.getFullYear() + "<br/>");
+            document.write("Miesiąc: " + data.getMonth() + "<br/>");
+            document.write("Dzień tygodnia: " + data.getDay() + "<br/>");
+            document.write("Dzień miesiąca: " + data.getDay()  + "<br/>");
+            document.write("Godzina: " + data.getHours() + "<br/>");
+            document.write("Minuta: " + data.getMinutes() + "<br/>");
+            document.write("Sekunda: " + data.getSeconds() + "<br/>");
+            document.write("Mili Sekunda: " + data.getMilliseconds() + "<br/>");
+            
+        </script>
+    </body>
+</html>

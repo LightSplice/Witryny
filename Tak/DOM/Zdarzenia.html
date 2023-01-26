@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html onmousemove="document.getElementById('counterId').innerHTML = counter++">
+    <head>
+        <title>Zdarzenia</title>
+    </head>
+    <body>
+        <div id="counterId"></div>
+        <script>
+            let counter = 0;
+        </script>
+
+        <br/>
+
+        <input type="button" 
+            value="Kliknij mnie" 
+            onclick="alert('Witaj na stronie');"/>
+            <br/>
+        <input type="button" 
+            value="Kliknij mnie" 
+            onmouseleave="alert('Witaj na stronie. Zdarzenie najechania myszką');"/>
+        <br/>
+        <p>Nowy tekst:</p>
+        <input type="text" id="newText" value="Przykładowy tekst" /><br/>
+        <input type="button" value="Podmień tekst" onclick="changeText()"/><br/>
+       
+        <div id="divToChange"><p>uyhbsbvu9sdeueha</p></div>
+
+        <img src="zd1.jpg" width="100" height="100"
+        onmouseenter="this.src='zd2.jpg'"
+        onmouseleave="this.src='zd1.jpg'"
+        />
+
+        <br/>
+
+        <img src="zd1.jpg" width="100" height="100" id="imgId"
+        onmouseenter="changeImage()"
+        onmouseleave="changeImage2()"
+        />
+
+        <br/>
+
+        <img src="zd1.jpg" width="100" height="100" id="img2Id"
+        onmouseenter="changeImage3('zd2.jpg')"
+        onmouseleave="changeImage3('zd1.jpg')"
+        />
+
+        <br/>
+
+        <img src="zd1.jpg" width="100" height="100" id="img3Id"
+        onmouseenter="changeImage4('zd2.jpg', 'img3Id')"
+        onmouseleave="changeImage4('zd1.jpg', 'img3Id')"
+        />
+
+        <br/>
+        
+        <img src="zd1.jpg" width="100" height="100" id="img4Id"
+        onmouseenter="changeImage4('zd2.jpg', 'img4Id')"
+        onmouseleave="changeImage4('zd1.jpg', 'img4Id')"
+        />
+
+        <br/>
+
+        <img src="zd1.jpg" width="100" height="100"
+        onmouseenter="changeImage5('zd2.jpg', this)"
+        onmouseleave="changeImage5('zd1.jpg', this)"
+        />
+
+        <br/>
+
+        <img src="zd1.jpg" width="100" height="100"
+        onmouseenter="changeImage5('zd2.jpg', this)"
+        onmouseleave="changeImage5('zd1.jpg', this)"
+        />
+
+        <script>
+            function changeImage()
+            {
+                document.getElementById("imgId").src = "zd2.jpg"
+            }
+
+            function changeImage2()
+            {
+                document.getElementById("imgId").src = "zd1.jpg"
+            }
+
+            function changeImage3(imageName)
+            {
+                document.getElementById("img2Id").src = imageName;
+            }
+
+            function changeImage4(imageName, id)
+            {
+                document.getElementById(id).src = imageName;
+            }
+
+            function changeImage5(imageName, pointer)
+            {
+                pointer.src = imageName;
+            }
+
+            function mousemove()
+            {
+
+            }
+
+
+            //alert("Witaj na stronie");
+            
+            function changeText()
+            {
+                let objectWithNewText = document.getElementById("newText");
+
+                let objectToChange = document.getElementById("divToChange");
+                //objectToChange.innerHTML="Ola ma szopa";
+                objectToChange.innerText = objectWithNewText.value;
+            }
+
+            
+            
+        </script>     
+    </body>
+</html>

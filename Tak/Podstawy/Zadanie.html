@@ -1,0 +1,119 @@
+<html>
+    <head>
+        <title>Data</title>
+    </head>
+    <body>
+        <script>
+            let data = new Date();
+            Dzień = data.getDay();
+            Month = data.getMonth();
+
+            switch(Dzień)
+            {  
+                case 1:
+                    Dzień = "Monday";
+                break;
+                case 2:
+                    Dzień = "Tuesday";
+                break;
+                case 3:
+                    Dzień = "Wednesday";
+                break;
+                case 4:
+                    Dzień = "Thursday";
+                break;
+                case 5:
+                    Dzień = "Friday";
+                break;
+                case 6:
+                    Dzień = "Saturday";
+                break;
+                case 7:
+                    Dzień = "Sunday";
+                break;
+            }
+            switch (Month + 1)
+            {
+                case 1:
+                    Month = "January";
+                break;
+                case 2:
+                    Month = "February";
+                break;
+                case 3:
+                    Month = "March";
+                break;
+                case 4:
+                    Month = "April";
+                break;
+                case 5:
+                    Month = "May";
+                break;
+                case 6:
+                    Month = "June";
+                break;
+                case 7:
+                    Month = "July";
+                break;
+                case 8:
+                    Month = "August";
+                break;
+                case 9:
+                    Month = "September";
+                break;
+                case 10:
+                    Month = "October";
+                break;
+                case 11:
+                    Month = "November";
+                break;
+                case 12:
+                    Month = "December";
+                break;
+            }
+            
+            document.write("Today is: " );
+            document.write(Dzień + ".")
+
+            if (data.getDay() < 10)
+            {
+                document.write((data.getDay() - 1) + ".");
+            }
+            else 
+            {
+                document.write("0" + (data.getDay() - 1) + ".");
+            }
+
+            document.write(Month + "." + data.getFullYear() + " roku" + '<br/>');       
+            document.write("Godzina: ")
+
+            if (data.getHours() < 10)
+            {
+                window.document.write("0" + data.getHours());
+            }
+            else
+            {
+                document.write(data.getHours());
+            }
+
+            if (data.getMinutes() < 10)
+            {
+                document.write(":" + "0" + data.getMinutes());
+            }
+            else
+            {
+                document.write(":" + data.getMinutes());
+            }
+
+            if (data.getSeconds() < 10)
+            {
+                document.write(":" + "0" +  data.getSeconds());
+            }
+            else
+            {
+                document.write(":" +  data.getSeconds());
+            }
+
+        </script>
+    </body>
+</html>
