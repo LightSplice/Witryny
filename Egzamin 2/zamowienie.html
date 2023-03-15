@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabryka cukierków</title>
+    <link rel="stylesheet" type="text/css" href="styl10.css">
+</head>
+<body>
+    <div id="gorny">
+        <a href="zamowienie.html" id="odnosnik">Zamów cukierki</a>
+    </div>
+    <div id="gorny">
+        <a href="index.html">
+            <img src="logotyp.png" alt="Nasze logo">
+        </a>
+    </div>
+    <div id="baner">
+        <h1>Strefa zamówień</h1>
+    </div>
+    <div id="glowny">
+        Numer kształtu:<br>
+        <input type="number" id="ksztalt"><br>
+        skomponuj swój kolor, podaj RGB: <br>
+        R: <input type="number" id="R">
+        G: <input type="number" id="G">
+        B: <input type="number" id="B">
+        <button onclick="skrypt()">Zamówienie</button>
+        <p id="wynik">Twoje zamówienie</p>
+        <button id="przycisk">Kolor </button>
+    </div>
+    <div id="glowny">
+        <h2>Nasza oferta</h2>
+        <table border="1">
+            <tr>
+                <td>Kształty</td>
+                <td rowspan="2">Możesz zamówić  <br> dowolny kolor cukierka</td>
+            </tr>
+            <tr>
+                <td>
+                    <ol>
+                        <li>cytryna</li>
+                        <li>liść</li>
+                        <li>banan</li>
+                    </ol>
+                </td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+    <div id="stopka">
+        Autor strony: <b>00000000000</b>
+    </div>
+    <script>
+        function skrypt(){
+            var ksztalt = document.getElementById("ksztalt").value;
+            var wynik = document.getElementById("wynik");
+            var R = document.getElementById(R).value;
+            var G = document.getElementById(G).value;
+            var B = document.getElementById(B).value;
+            var przycisk = document.getElementById("przycisk");
+
+            var tekst = "Twoje zamówienie to cukierek";
+
+            if (ksztalt == 1)
+            {
+                tekst += " cytryna";
+            }
+            else if (ksztalt == 2)
+            {
+                tekst += " ilosc";
+            }
+            else if (ksztalt == 3)
+            {
+                tekst += " inny";
+            }
+
+            wynik.innerHTML = tekst;
+
+            przycisk.style.backgroundColor = "rgb("+ R + "," + G + "," + B + ")";
+        }
+    </script>
+</body>
+</html> 
