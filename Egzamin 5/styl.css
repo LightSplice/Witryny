@@ -1,0 +1,48 @@
+* {
+    font-family: Garamond;
+}
+#logo {
+    background-color: olive;
+    width: 25%;
+    height: 110px;
+    float: left;
+}
+#menu {
+    background-color: olive;
+    width: 75%;
+    height: 110px;
+    float: left;
+}
+#baner, #stopka {
+    background-color: saddlebrown;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+#lewy, #prawy {
+    background-color: wheat;
+    width: 50%;
+    height: 450px;
+    font-size: 150%;
+    float: left;
+}
+#lewy {
+    text-align: center;
+}
+h1 {
+    letter-spacing: 12px;
+}
+a {
+    color: lightgrey;
+    margin: 30px;
+    font-size: 150%;
+    line-height: 110px;
+    text-decoration: none;
+}
+a:hover {
+    color: white;
+    border-bottom: 1px solid white;
+}
+.bez {
+    text-decoration: line-through;
+}
