@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylGra.css">
+    <title>Kółko i Krzyżyk</title>
+</head>
+    <body>
+        <div id="tekst">
+            <h1>Kółko i Krzyżyk</h1>
+        </div>
+        <div id="Gra">
+            
+            <div id="pojemnik">
+                <div cellindex="0" class="komorka"></div>
+                <div cellindex="1" class="komorka"></div>
+                <div cellindex="2" class="komorka"></div>
+                <div cellindex="3" class="komorka"></div>
+                <div cellindex="4" class="komorka"></div>
+                <div cellindex="5" class="komorka"></div>
+                <div cellindex="6" class="komorka"></div>
+                <div cellindex="7" class="komorka"></div>
+                <div cellindex="8" class="komorka"></div>
+            </div>
+            <h2 id="status"></h2>
+            <button id="restart" >Restart</button>
+        </div>
+        <div id="tekst">
+            Grę przygotował: Jakub Gad
+        </div>
+        <script>
+            const komorki = document.querySelectorAll(".komorka");
+            const status = document.querySelector("#status");
+            const restart = document.querySelector("#restart");
+            const warunekWyg = [
+                [0, 1, 2],
+                [3, 4, 5],
+                [6, 7, 8],
+                [0, 3, 6],
+                [1, 4, 7],
+                [2, 5, 8],
+                [0, 4, 8],
+                [2, 4, 6]
+            ];
+            let opcje = ["", "", "", "", "", "", "", "", ""];
+            let obecnyGracz = "X";
+            let dziala = false;
+
+            stanGry();
+
+            function stanGry() {
+                komorki.forEach(komorki => komorki.addEventListener("click", kliknietaKonmorka));
+                restart.addEventListener("click", restartGry);
+                status.textContent = `Tura ${obecnyGracz}`;
+                dziala = true;             
+            }
+
+            function kliknietaKonmorka() {
+                const indeksKomorki = this.getAttribute("cellIndex");
+                if (opcje[indeksKomorki] != "" || !dziala)
+                {
+                    return;
+                }
+                zmienKomorke(this, indeksKomorki);
+                sprawdzWygrana();
+            }
+
+            function zmienKomorke(komorka, indeks) {
+                opcje[indeks] = obecnyGracz;
+                komorka.textContent = obecnyGracz;
+            }
+
+            function zmienGracza() {
+                obecnyGracz = (obecnyGracz == "X") ? "O" : "X";
+                status.textContent = `Tura ${obecnyGracz}`;
+            }
+
+            function sprawdzWygrana() {
+                let wygranaRunda = false;
+
+                for (let i = 0; i < warunekWyg.length; i++)
+                {
+                    const warunek = warunekWyg[i];
+                    const komorkaA = opcje[warunek[0]];
+                    const komorkaB = opcje[warunek[1]];
+                    const komorkaC = opcje[warunek[2]];
+
+                    if (komorkaA == "" || komorkaB == "" || komorkaC == "")
+                    {
+                        continue;
+                    }
+                    if (komorkaA == komorkaB && komorkaB == komorkaC)
+                    {
+                        wygranaRunda = true;
+                        break;
+                    }
+                }
+                if (wygranaRunda == true)
+                {
+                    status.textContent = `${obecnyGracz} wygrał!`
+                    dziala = false;
+                }
+                else if (!opcje.includes(""))
+                {
+                    status.textContent = `Remis!`;
+                    dziala = false;
+                }
+                else
+                {
+                    zmienGracza();
+                }
+            }
+
+            function restartGry() {
+                obecnyGracz = "X";
+                opcje = ["", "", "", "", "", "", "", "", ""];
+                status.textContent = `Tura ${obecnyGracz}`;
+                komorki.forEach(komorka => komorka.textContent = "");
+                dziala = true;
+            }
+
+        </script>
+    </body>
+</html>
